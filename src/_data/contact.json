@@ -1,16 +1,16 @@
 {
     "items": [
         {
-            "name": "test@example.com",
-            "link": "mailto:test@example.com"
+            "name": "mlambir@gmail.com",
+            "link": "mailto:mlambir@gmail.com "
         },
         {
             "name": "GitHub",
-            "link": "https://github.com/…"
+            "link": "https://github.com/mlambir"
         },
         {
-            "name": "CodePen",
-            "link": "https://codepen.io/…"
+            "name": "LinkedIn",
+            "link": "https://linkedin.com/in/mlambir"
         }
     ]
 }

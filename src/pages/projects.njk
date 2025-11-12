@@ -1,0 +1,25 @@
+---
+title: Projects
+layout: layouts/base.njk
+permalink: /projects/
+eleventyNavigation:
+  key: Projects
+  order: 2
+  hide: true
+---
+
+{% set projects = collections.projects %}
+
+<ul>
+  {% for project in projects %}
+    <li>
+      <strong>
+        <a href="{{ project.url | url }}">{{ project.data.title }}</a>
+      </strong>
+      -
+      <time datetime="{{ project.date | htmlDateString }}">{{ project.date | readableDate }}</time>
+      -
+      <span>{{ project.data.description }}</span>
+    </li>
+  {% endfor %}
+</ul>
