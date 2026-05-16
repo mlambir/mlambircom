@@ -1,13 +1,14 @@
-<ul>
+<h1 class="text-5xl md:text-7xl font-black uppercase mb-12 border-b-8 border-brutal-accent pb-4 inline-block">Blog</h1>
+
+<ul class="flex flex-col gap-8 border-l-8 border-brutal-text pl-8">
   {% for post in postslist %}
-    <li>
-      <strong>
-        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
-      </strong>
-      -
-      <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-      -
-      <span>{{ post.data.description }}</span>
+    <li class="relative">
+      <div class="absolute w-8 h-8 bg-brutal-accent border-4 border-brutal-text -left-12 top-2 rounded-full hidden md:block"></div>
+      <a href="{{ post.url | url }}" class="block border-4 border-brutal-text p-6 bg-brutal-bg hover:bg-brutal-text hover:text-brutal-bg transition-colors group">
+        <h2 class="text-3xl md:text-4xl font-black uppercase mb-2">{{ post.data.title }}</h2>
+        <time class="inline-block bg-brutal-accent text-white px-2 py-1 text-sm font-bold tracking-widest uppercase mb-4" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+        <p class="text-lg md:text-xl font-bold">{{ post.data.description }}</p>
+      </a>
     </li>
   {% endfor %}
 </ul>

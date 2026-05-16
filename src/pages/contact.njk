@@ -7,8 +7,14 @@ eleventyNavigation:
   order: 3
 ---
 
-<ul>
+<h1 class="text-5xl md:text-7xl font-black uppercase mb-12 border-b-8 border-brutal-accent pb-4 inline-block">Contact</h1>
+
+<ul class="flex flex-col gap-6">
      {% for item in contact.items %}
-     <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+     <li>
+       <a href="{{ item.link }}" class="block border-4 border-brutal-text p-6 text-2xl md:text-4xl font-black uppercase tracking-widest text-center hover:bg-brutal-accent hover:text-white transition-all transform hover:translate-x-2 hover:-translate-y-2 hover:shadow-[-8px_8px_0_0_var(--color-brutal-text)]">
+         {{ item.name }}
+       </a>
+     </li>
      {% endfor %}
 </ul>

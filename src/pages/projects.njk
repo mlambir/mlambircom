@@ -3,23 +3,30 @@ title: Projects
 layout: layouts/base.njk
 permalink: /projects/
 eleventyNavigation:
-  key: Projects
-  order: 2
-  hide: true
+key: Projects
+order: 2
+hide: true
 ---
+
+<h1 class="text-5xl md:text-7xl font-black uppercase mb-12 border-b-8 border-brutal-accent pb-4 inline-block">Projects
+</h1>
 
 {% set projects = collections.projects %}
 
-<ul>
+<ul class="flex flex-col gap-8">
   {% for project in projects %}
-    <li>
-      <strong>
-        <a href="{{ project.url | url }}">{{ project.data.title }}</a>
-      </strong>
-      -
-      <time datetime="{{ project.date | htmlDateString }}">{{ project.date | readableDate }}</time>
-      -
-      <span>{{ project.data.description }}</span>
-    </li>
+  <li
+    class="border-4 border-brutal-text p-6 hover:bg-brutal-text hover:text-brutal-bg transition-colors group cursor-pointer shadow-[8px_8px_0_0_var(--color-brutal-accent)]">
+    <a href="{{ project.url | url }}" class="block">
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between border-b-4 border-brutal-text group-hover:border-brutal-bg pb-4 mb-4 gap-4">
+        <h2 class="text-3xl md:text-5xl font-black uppercase leading-none">{{ project.data.title }}</h2>
+        <time
+          class="text-lg font-bold uppercase tracking-widest whitespace-nowrap bg-brutal-accent text-white px-3 py-1 group-hover:bg-brutal-bg group-hover:text-brutal-text"
+          datetime="{{ project.date | htmlDateString }}">{{ project.date | readableDate }}</time>
+      </div>
+      <p class="text-xl md:text-2xl font-bold uppercase leading-relaxed">{{ project.data.description }}</p>
+    </a>
+  </li>
   {% endfor %}
 </ul>
