@@ -20,6 +20,6 @@
     "tailwindcss": "^4.1.13"
   },
   "dependencies": {
-    "eleventy-plugin-tailwindcss-4": "^2.0.1"
+    "eleventy-plugin-tailwindcss-4": "^3.0.0"
   }
 }
